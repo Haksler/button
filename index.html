@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" conten="width=device-width, initial-scale=1.">
+        <title>TITLE</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%; column-gap:20em;">
+        <a id="#guzik" href="https://github.com/Haksler" class="neon-button2">Neon</a>
+        <a href="https://github.com/Haksler" class="neon-button">Neon</a>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+        <label for="Colorn">Color:</label>
+        <input id="Colorn" type="color" value="#1164E2"/>
+        <script>
+            var Colorn;
+            var defaultColor = "#1164E2";
+            window.addEventListener("load", startup, false);
+
+            function startup() {
+             Colorn = document.querySelector("#Colorn");
+             Colorn.value = defaultColor;
+             Colorn.addEventListener("input", updateFirst, false);
+             Colorn.select();
+            }
+
+            function updateFirst(event) {
+             var button = document.getElementById("#guzik");
+
+             if (button) {
+                document.documentElement.style.setProperty('--clr-second', event.target.value);
+
+            }
+        }
+
+        </script>
+
+        </div>
+    </body>
+</html>
